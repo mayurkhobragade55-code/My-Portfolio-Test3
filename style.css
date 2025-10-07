@@ -1,0 +1,295 @@
+/*
+ * --------------------------------
+ * 1. Global Styles & Variables
+ * --------------------------------
+ */
+:root {
+    --primary-color: #007BFF;
+    /* Bright Blue */
+    --secondary-color: #28A745;
+    /* Green Accent */
+    --background-dark: #1F2833;
+    /* Dark background */
+    --text-light: #C5C6C7;
+    /* Light text */
+    --card-background: #2C3848;
+    /* Slightly lighter card background */
+    --font-family: 'Poppins', sans-serif;
+    --max-width: 1200px;
+}
+
+/* Import a modern font (e.g., Poppins) - requires linking in HTML <head> */
+/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll from padding/margins */
+}
+
+/*
+ * --------------------------------
+ * 2. Typography & Links
+ * --------------------------------
+ */
+h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--text-light);
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/*
+ * --------------------------------
+ * 3. Header & Navigation
+ * --------------------------------
+ */
+header {
+    background-color: var(--card-background);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header p {
+    color: var(--text-light);
+    font-size: 1.1em;
+}
+
+nav ul {
+    list-style: none;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allows navigation to wrap on smaller screens */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/*
+ * --------------------------------
+ * 4. Main Content Structure
+ * --------------------------------
+ */
+main {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    /* Centers the content and adds vertical spacing */
+    padding: 0 20px;
+}
+
+section {
+    padding: 40px;
+    margin-bottom: 40px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(197, 198, 199, 0.1);
+    margin: 40px 0;
+}
+
+/*
+ * --------------------------------
+ * 5. Section Specific Styling
+ * --------------------------------
+ */
+
+/* Experience & Education Articles */
+#experience article,
+#education article {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-left: 5px solid var(--primary-color);
+    background-color: #344050;
+    /* Slightly darker article background */
+    border-radius: 5px;
+}
+
+#experience ul,
+#education ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Skills Section */
+#skills .skill-group {
+    margin-top: 20px;
+}
+
+#skills .skill-group p {
+    background-color: var(--primary-color);
+    color: white;
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px 10px 5px 0;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/*
+ * --------------------------------
+ * 6. Footer
+ * --------------------------------
+ */
+footer {
+    background-color: var(--card-background);
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid var(--secondary-color);
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*
+ * --------------------------------
+ * 7. Responsive Design (Media Queries)
+ * --------------------------------
+ */
+
+/* Tablet & Smaller Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* Stack skill chips vertically for small screens */
+    #skills .skill-group p {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
+/* Back to Top Button Styling */
+#backToTopBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed position */
+    bottom: 20px;
+    /* Distance from the bottom */
+    right: 30px;
+    /* Distance from the right */
+    z-index: 99;
+    /* Ensure it's above other elements */
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    /* Use your primary color */
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50%;
+    /* Makes it circular */
+    font-size: 24px;
+    line-height: 1;
+    /* Center the arrow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.9;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--secondary-color);
+    /* Use your secondary color on hover */
+    opacity: 1;
+}
